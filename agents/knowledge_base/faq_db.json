@@ -1,0 +1,86 @@
+[
+  {
+    "article_id": "faq-001",
+    "title": "How to reset your password",
+    "content": "To reset your password, go to the login page and click 'Forgot Password'. Enter your registered email address and follow the instructions sent to your inbox. If you don't receive the email within 5 minutes, check your spam folder or contact our support team.",
+    "category": "account_management",
+    "language": "en"
+  },
+  {
+    "article_id": "faq-002",
+    "title": "كيفية إعادة تعيين كلمة المرور",
+    "content": "لإعادة تعيين كلمة المرور، انتقل إلى صفحة تسجيل الدخول وانقر على 'نسيت كلمة المرور'. أدخل عنوان بريدك الإلكتروني المسجل واتبع التعليمات المرسلة إلى بريدك الوارد.",
+    "category": "account_management",
+    "language": "ar"
+  },
+  {
+    "article_id": "faq-003",
+    "title": "Billing and payment methods",
+    "content": "We accept Visa, MasterCard, and bank transfers. Your billing cycle runs from the 1st to the last day of each month. Invoices are generated automatically and sent to your registered email. You can update your payment method in Account Settings > Billing.",
+    "category": "billing_inquiry",
+    "language": "en"
+  },
+  {
+    "article_id": "faq-004",
+    "title": "طرق الدفع والفوترة",
+    "content": "نحن نقبل فيزا وماستركارد والتحويلات البنكية. تبدأ دورة فوترتك من اليوم الأول إلى آخر يوم من كل شهر. يتم إنشاء الفواتير تلقائياً وإرسالها إلى بريدك الإلكتروني المسجل.",
+    "category": "billing_inquiry",
+    "language": "ar"
+  },
+  {
+    "article_id": "faq-005",
+    "title": "How to track your order",
+    "content": "You can track your order by logging into your account and visiting the 'My Orders' section. Click on the relevant order to see real-time tracking information. You will also receive email updates at every stage of delivery.",
+    "category": "order_status",
+    "language": "en"
+  },
+  {
+    "article_id": "faq-006",
+    "title": "كيفية تتبع طلبك",
+    "content": "يمكنك تتبع طلبك بتسجيل الدخول إلى حسابك وزيارة قسم 'طلباتي'. انقر على الطلب المعني لرؤية معلومات التتبع في الوقت الفعلي.",
+    "category": "order_status",
+    "language": "ar"
+  },
+  {
+    "article_id": "faq-007",
+    "title": "Refund and return policy",
+    "content": "Our refund policy allows returns within 30 days of purchase for a full refund. Items must be in original condition with all packaging. To initiate a return, go to 'My Orders', select the order, and click 'Request Return'. Refunds are processed within 5-7 business days.",
+    "category": "refund_request",
+    "language": "en"
+  },
+  {
+    "article_id": "faq-008",
+    "title": "سياسة الاسترداد والإرجاع",
+    "content": "سياسة الاسترداد لدينا تسمح بالإرجاع خلال 30 يوماً من الشراء لاسترداد كامل. يجب أن تكون العناصر في حالتها الأصلية مع جميع التغليف. لبدء عملية إرجاع، انتقل إلى 'طلباتي' واختر الطلب وانقر 'طلب إرجاع'.",
+    "category": "refund_request",
+    "language": "ar"
+  },
+  {
+    "article_id": "faq-009",
+    "title": "Technical troubleshooting guide",
+    "content": "If you're experiencing technical issues: 1) Clear your browser cache and cookies. 2) Try a different browser or device. 3) Ensure your internet connection is stable. 4) Disable any ad-blockers or VPNs. If the issue persists, contact our technical support team with screenshots of the error.",
+    "category": "technical_support",
+    "language": "en"
+  },
+  {
+    "article_id": "faq-010",
+    "title": "دليل استكشاف الأخطاء التقنية",
+    "content": "إذا كنت تواجه مشاكل تقنية: 1) امسح ذاكرة التخزين المؤقت وملفات تعريف الارتباط للمتصفح. 2) جرب متصفحاً أو جهازاً مختلفاً. 3) تأكد من استقرار اتصال الإنترنت. 4) قم بتعطيل أي أدوات حظر إعلانات أو شبكات VPN.",
+    "category": "technical_support",
+    "language": "ar"
+  },
+  {
+    "article_id": "faq-011",
+    "title": "Subscription cancellation",
+    "content": "To cancel your subscription, go to Account Settings > Subscription > Cancel Subscription. Please note that cancellation takes effect at the end of your current billing cycle. You will retain access until then. We'd love to hear your feedback on why you're leaving.",
+    "category": "cancellation",
+    "language": "en"
+  },
+  {
+    "article_id": "faq-012",
+    "title": "إلغاء الاشتراك",
+    "content": "لإلغاء اشتراكك، انتقل إلى إعدادات الحساب > الاشتراك > إلغاء الاشتراك. يرجى ملاحظة أن الإلغاء يسري في نهاية دورة الفوترة الحالية. ستحتفظ بإمكانية الوصول حتى ذلك الحين.",
+    "category": "cancellation",
+    "language": "ar"
+  }
+]

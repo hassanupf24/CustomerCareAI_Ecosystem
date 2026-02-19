@@ -1,0 +1,125 @@
+# ── Docker Compose — CustomerCareAI Ecosystem ─────────────────────────────────
+# Brings up all microservices + shared database for local development.
+
+version: "3.9"
+
+services:
+  # ── PostgreSQL Database ───────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: customercareai
+      POSTGRES_PASSWORD: customercareai_secret
+      POSTGRES_DB: customercareai
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U customercareai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── Orchestrator ──────────────────────────────────────────────────────────
+  orchestrator:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.orchestrator
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://customercareai:customercareai_secret@db:5432/customercareai
+      - OCS_SERVICE_URL=http://ocs:8001
+      - KFO_SERVICE_URL=http://kfo:8002
+      - EIA_SERVICE_URL=http://eia:8003
+      - PIR_SERVICE_URL=http://pir:8004
+      - FAN_SERVICE_URL=http://fan:8005
+      - DEBUG=true
+      - LOG_LEVEL=INFO
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── OCS Agent ─────────────────────────────────────────────────────────────
+  ocs:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ocs
+    ports:
+      - "8001:8001"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://customercareai:customercareai_secret@db:5432/customercareai
+      - LOG_LEVEL=INFO
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── KFO Agent ─────────────────────────────────────────────────────────────
+  kfo:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.kfo
+    ports:
+      - "8002:8002"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://customercareai:customercareai_secret@db:5432/customercareai
+      - FAISS_INDEX_DIR=/app/data/faiss_indices
+      - LOG_LEVEL=INFO
+    volumes:
+      - faiss_data:/app/data/faiss_indices
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── EIA Agent ─────────────────────────────────────────────────────────────
+  eia:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.eia
+    ports:
+      - "8003:8003"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://customercareai:customercareai_secret@db:5432/customercareai
+      - LOG_LEVEL=INFO
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── PIR Agent ─────────────────────────────────────────────────────────────
+  pir:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.pir
+    ports:
+      - "8004:8004"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://customercareai:customercareai_secret@db:5432/customercareai
+      - LOG_LEVEL=INFO
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── FAN Agent ─────────────────────────────────────────────────────────────
+  fan:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.fan
+    ports:
+      - "8005:8005"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://customercareai:customercareai_secret@db:5432/customercareai
+      - LOG_LEVEL=INFO
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  faiss_data:

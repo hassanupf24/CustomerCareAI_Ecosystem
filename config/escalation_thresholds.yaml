@@ -1,0 +1,27 @@
+# Escalation Thresholds Configuration
+# ====================================
+# These thresholds determine when the system escalates to a human agent.
+
+escalation:
+  sentiment:
+    # If EIA sentiment_score falls below this value, escalation is triggered.
+    threshold: -0.65
+
+  emotion:
+    # If the dominant emotion is one of these for N consecutive turns, escalate.
+    trigger_emotions:
+      - anger
+      - distress
+    consecutive_turns: 2
+
+  proactive_alerts:
+    # If PIR produces an alert of this severity, escalate immediately.
+    critical_severity: "critical"
+
+  intent:
+    # If OCS detects this intent, the customer explicitly wants a human.
+    explicit_escalation_intent: "escalation_request"
+
+  unresolved:
+    # Max turns without a resolved intent before auto-escalation.
+    max_unresolved_turns: 3

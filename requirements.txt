@@ -1,0 +1,74 @@
+# CustomerCareAI Ecosystem — Requirements (Open-Source Only)
+# =========================================================
+
+# --- API Framework ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+
+# --- Data Validation ---
+pydantic>=2.6
+pydantic-settings>=2.2
+
+# --- NLP / Transformers ---
+transformers>=4.38
+torch>=2.2
+sentence-transformers>=2.6
+
+# --- Vector Search ---
+faiss-cpu>=1.8
+
+# --- ML Models ---
+scikit-learn>=1.4
+
+# --- Time-Series Forecasting ---
+prophet>=1.1
+
+# --- Language Detection ---
+langdetect>=1.0.9
+
+# --- Translation (Offline EN↔AR) ---
+argostranslate>=1.9
+
+# --- Sentiment / Text Processing ---
+nltk>=3.8
+textblob>=0.18
+
+# --- Database ORM ---
+sqlalchemy>=2.0
+alembic>=1.13
+
+# --- Async Database Driver ---
+aiosqlite>=0.20
+asyncpg>=0.29
+
+# --- Async HTTP Client ---
+httpx>=0.27
+
+# --- Config Management ---
+python-dotenv>=1.0
+
+# --- Structured Logging ---
+structlog>=24.1
+
+# --- BM25 Ranking ---
+rank-bm25>=0.2.2
+
+# --- Data Processing ---
+pandas>=2.2
+numpy>=1.26
+
+# --- Visualization (FAN reports) ---
+matplotlib>=3.8
+wordcloud>=1.9
+
+# --- Testing ---
+pytest>=8.0
+pytest-asyncio>=0.23
+pytest-cov>=4.1
+httpx  # for TestClient
+
+# --- YAML Config ---
+pyyaml>=6.0
+
+# --- UUID ---
+uuid6>=2024.1

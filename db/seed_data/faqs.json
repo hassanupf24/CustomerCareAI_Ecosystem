@@ -1,0 +1,23 @@
+[
+    {
+        "article_id": "faq-001",
+        "title": "How to reset your password",
+        "content": "To reset your password, go to the login page and click 'Forgot Password'. Enter your registered email address and follow the instructions.",
+        "category": "account_management",
+        "language": "en"
+    },
+    {
+        "article_id": "faq-003",
+        "title": "Billing and payment methods",
+        "content": "We accept Visa, MasterCard, and bank transfers. Your billing cycle runs from the 1st to the last day of each month.",
+        "category": "billing_inquiry",
+        "language": "en"
+    },
+    {
+        "article_id": "faq-005",
+        "title": "How to track your order",
+        "content": "Log into your account and visit 'My Orders' to see real-time tracking information.",
+        "category": "order_status",
+        "language": "en"
+    }
+]
